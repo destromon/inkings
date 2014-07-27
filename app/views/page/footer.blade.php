@@ -1,1 +1,2 @@
-<div class="container-fluid"> Footer </div>
+<hr/>
+Copyright &copy; 2014. All Rights Reserved.
