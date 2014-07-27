@@ -1,0 +1,1 @@
+{{ HTML::style('css/bootstrap.min.css') }}

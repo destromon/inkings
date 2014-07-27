@@ -10,11 +10,4 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Menu::handler('main')
-    ->add('home', 'Homepage')
-	->add('about', 'About');
-
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@index');
