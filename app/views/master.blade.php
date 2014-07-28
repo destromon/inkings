@@ -70,5 +70,8 @@
 		</div>
 	</div>
 	@include('global/js')
+	<script type="text/javascript">
+		$('#tags').tagsInput({});
+	</script>
 </body>
 </html>

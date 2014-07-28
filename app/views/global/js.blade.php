@@ -5,3 +5,4 @@
 {{ HTML::script('plugins/tinymce/tinymce.min.js') }}
 {{ HTML::script('plugins/tinymce/jquery.tinymce.min.js') }}
 {{ HTML::script('js/devoops.js') }}
+{{ HTML::script('js/jquery.tagsinput.js') }}

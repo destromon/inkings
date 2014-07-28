@@ -6,3 +6,4 @@
 {{ HTML::style('plugins/xcharts/xcharts.min.css') }}
 {{ HTML::style('plugins/select2/select2.css') }}
 {{ HTML::style('css/style.min.css') }}
+{{ HTML::style('css/jquery.tagsinput.css') }}
