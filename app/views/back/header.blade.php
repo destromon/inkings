@@ -17,16 +17,16 @@
       <li class="dropdown active">
         <a href="user" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="user">List of Users</a></li>
-          <li><a href="user/create">Create New User</a></li>
+          <li><a href="/user">List of Users</a></li>
+          <li><a href="/user/create">Create New User</a></li>
         </ul>
       </li>
 
       <li class="dropdown">
         <a href="artwork " class="dropdown-toggle" data-toggle="dropdown">Artworks <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="artwork">List of Artworks</a></li>
-          <li><a href="artwork/create">Add New Artwork</a></li>
+          <li><a href="/artwork">List of Artworks</a></li>
+          <li><a href="/artwork/create">Add New Artwork</a></li>
         </ul>
       </li>
 

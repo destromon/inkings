@@ -1,0 +1,3 @@
+@extends('back')
+
+{{ $user }}

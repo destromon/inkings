@@ -14,3 +14,7 @@ Route::get('/', 'HomeController@index');
 
 //route to user.php
 Route::get('user', 'UserController@index');
+Route::get('user/create', 'UserController@create');
+Route::get('user/edit/{id}', 'UserController@edit');
+Route::get('user/delete/{id}', 'UserController@delete');
+Route::get('user/save', 'UserController@save');
