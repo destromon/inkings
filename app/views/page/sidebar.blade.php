@@ -33,6 +33,9 @@
 			.sidebar-content {
 				position:relative;
 			}
+			.sidebar-content .logo {
+				margin-left: 50px;
+			}
 		}
 </style>
 
