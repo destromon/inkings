@@ -11,3 +11,6 @@
 |
 */
 Route::get('/', 'HomeController@index');
+
+//route to user.php
+Route::get('user', 'UserController@index');
