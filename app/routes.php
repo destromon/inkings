@@ -29,6 +29,7 @@ Route::get('logout', function() {
 Route::group(array('before' => 'auth'), function()
 {	
 	Route::resource('user', 'UserController');
+	Route::resource('artwork', 'ArtworkController');
     Route::get('admin', 'AdminController@index');
 });
 
