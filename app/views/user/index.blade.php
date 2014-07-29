@@ -14,7 +14,7 @@ List of Users
   <div class="bs-example">
       <div class="alert bg-danger">
           <a href="#" class="close" data-dismiss="alert">&times;</a>
-          {{ Session::get('message') }}
+          {{ Session::get('delete') }}
       </div>
   </div>
 @endif
