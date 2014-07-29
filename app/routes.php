@@ -10,12 +10,22 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::get('/', 'HomeController@index');
 
-//route to user.php
-Route::get('user', 'UserController@index');
-Route::post('user', 'UserController@store');
-Route::get('user/create', 'UserController@create');
-Route::get('user/edit/{id}', 'UserController@edit');
-Route::get('user/update/{id}', 'UserController@edit');
-Route::get('user/delete/{id}', 'UserController@delete');
+Route::resource('user', 'UserController');
+
+// Route::get('/', 'HomeController@index');
+
+// //route to user.php
+// Route::get('/user', 'UserController@index');
+// //save
+// Route::post('/user', 'UserController@store');
+// //delete
+// Route::delete('/user/{id}', 'UserController@destroy');
+
+// //form
+// Route::get('/user/create', 'UserController@create');
+// //form edit
+// Route::get('/user/{id}/edit', 'UserController@edit');
+// //update
+// Route::put('/user/{id}', 'UserController@update');
+

@@ -18,7 +18,10 @@ class CreateUserTable extends Migration {
 			$table->string('user_email', '100');
 			$table->unique('user_email');
 			$table->string('user_password', '100');
-			$table->string('user_accesslevel', '50');
+			$table->string('user_first', '30');
+			$table->string('user_last', '30');
+			$table->string('user_middle', '30')->nullable;
+			$table->string('user_access', '50');
 			$table->boolean('active')->default(1);
 			$table->timestamps();
 		});
