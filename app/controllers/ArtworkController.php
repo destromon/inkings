@@ -22,7 +22,7 @@ class ArtworkController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('artwork.create');
 	}
 
 
@@ -33,7 +33,43 @@ class ArtworkController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		//create rules 
+		$rules = array(
+			'artwork_title' => 'required',
+			'artwork_tags' 	=> 'required',
+			'artwork_image' => 'required'
+		);
+
+		//validate posted data
+		$validator = Validator::make(Input::all(), $rules);
+		
+		//check if data is ok
+		if($validator->fails()) {
+			return Redirect::to('artwork/create')
+				->withErrors($validator);
+		} else {
+			$file = Input::file('artwork_image');
+			$destinationPath = 'uploads';
+			// If the uploads fail due to file system, you can try doing public_path().'/uploads' 
+			$filename = time() . '.' . $file->getClientOriginalExtension();
+			$upload_success = Input::file('artwork_image')->move($destinationPath, $filename);
+			
+			if($upload_success) {
+				$artwork = new artwork;
+				$artwork->artwork_title = Input::get('artwork_title');
+				$artwork->artwork_tags  = Input::get('artwork_tags');
+				$artwork->artwork_image = $filename;
+				$artwork->save();
+
+				Session::flash('message', 'artwork successfully created');
+
+				return Redirect::to('artwork');
+			} else {
+				return Redirect::to('artwork/create')
+				->withErrors($validator);
+			}
+			
+		}
 	}
 
 
@@ -57,7 +93,10 @@ class ArtworkController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$artwork = Artwork::find($id);
+
+		return View::make('artwork.edit')
+			->with(array('artwork' => $artwork));
 	}
 
 
@@ -69,7 +108,30 @@ class ArtworkController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		//create rules 
+		$rules = array(
+			'artwork_title' => 'required',
+			'artwork_tags' 	=> 'required'
+			//'artwork_image' => 'required',
+		);
+
+		//validate posted data
+		$validator = Validator::make(Input::all(), $rules);
+		
+		//check if data is ok
+		if($validator->fails()) {
+			return Redirect::to('artwork/' . $id . '/edit')
+				->withErrors($validator);
+		} else {
+			$artwork = artwork::find($id);
+			$artwork->artwork_title = Input::get('artwork_title');
+			$artwork->artwork_tags  = Input::get('artwork_tags');
+			$artwork->save();
+
+			Session::flash('message', 'artwork successfully updated');
+
+			return Redirect::to('artwork');
+		}
 	}
 
 
@@ -81,7 +143,11 @@ class ArtworkController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$artwork = artwork::find($id);
+		$artwork->delete();
+
+		Session::flash('delete', 'artwork successfully deleted');
+		return Redirect::to('artwork');
 	}
 
 

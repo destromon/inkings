@@ -17,7 +17,9 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		return View::make('home.index');
+		$artworks = Artwork::orderBy('updated_at','desc')->get();
+		return View::make('home.index')
+			->with(array('artworks' => $artworks));
 	}
 
 }

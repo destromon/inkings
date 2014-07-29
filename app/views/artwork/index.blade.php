@@ -18,12 +18,13 @@ List of artworks
     </div>
 </div>
 @endif
-<a href="/artwork/create"> Create New artwork </a> <br/>
+<a href="/artwork/create"> Upload New Artwork </a> <br/>
 
 @if(count($artworks) != 0)
 <table class="table table-striped table-hover table-bordered">
     <th colspan="2"> Action </th>
     <th> ID </th>
+    <th> Image </th>
     <th> Title </th>
     <th> Tags </th>  
     <tbody>
@@ -37,6 +38,7 @@ List of artworks
             </td>
             <td> <a class="btn btn-small btn-info" href="{{ URL::to('artwork/' . $artwork->id . '/edit') }}">Edit</a> </td>
             <td> {{ $artwork->id }}  </td>
+            <td> <img src="uploads/{{$artwork->artwork_image}}" class="img-responsive img-thumbnail" width="140" height="140"/> </td>
             <td> {{ $artwork->artwork_title }} </td>
             <td> {{ $artwork->artwork_tags }} </td>
         </tr>

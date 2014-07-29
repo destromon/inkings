@@ -15,8 +15,9 @@ class CreateArtworkTable extends Migration {
 		Schema::create('artwork', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('title', '100');
-			$table->string('tags');
+			$table->string('artwork_title', '100');
+			$table->string('artwork_tags');
+			$table->string('artwork_image');
 			$table->timestamps();
 		});
 	}

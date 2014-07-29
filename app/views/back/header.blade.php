@@ -14,7 +14,7 @@
   </div>
   <div style="" class="navbar-collapse navbar-responsive-collapse collapse in">
     <ul class="nav navbar-nav">
-      <li class="dropdown active">
+      <li class="dropdown">
         <a href="user" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="{{ URL::to('user') }}">List of Users</a></li>
@@ -26,7 +26,7 @@
         <a href="artwork " class="dropdown-toggle" data-toggle="dropdown">Artworks <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="{{ URL::to('artwork') }}">List of Artworks</a></li>
-          <li><a href="{{ URL::to('artwork/create') }}">Add New Artwork</a></li>
+          <li><a href="{{ URL::to('artwork/create') }}">Upload New Artwork</a></li>
         </ul>
       </li>
     </ul>
