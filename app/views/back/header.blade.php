@@ -29,7 +29,9 @@
           <li><a href="{{ URL::to('artwork/create') }}">Add New Artwork</a></li>
         </ul>
       </li>
-
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ URL::to('logout') }}">Logout</a></li>
     </ul>
   </div>
 </div>

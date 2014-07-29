@@ -9,6 +9,10 @@ class LoginController extends \BaseController {
 	 */
 	public function index()
 	{
+		if(Auth::check()) {
+			return Redirect::to('user');
+		}
+
 		return View::make('login.index');
 	}
 
@@ -43,13 +47,11 @@ class LoginController extends \BaseController {
 			);
 
 			if (Auth::attempt($userData)) {
-
-				echo "success";
-
-				//return Redirect::to('user');
+				return Redirect::to('user');
 			} else {	 	
-				echo "false";
-				//return Redirect::to('login');
+				Session::flash('message', 'Invalid Credentials');
+				return Redirect::to('login')
+					->withInput(Input::except('user_passwordd'));
 			}
 		}
 	}

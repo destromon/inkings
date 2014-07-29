@@ -12,14 +12,19 @@
 */
 
 //user controller
+Route::get('/', 'HomeController@index');
 Route::resource('user', 'UserController');
 
 //login controller
 Route::get('login', 'LoginController@index');
 Route::post('login', 'LoginController@doLogin');
 
+//logout
 Route::get('logout', function() {
 	Auth::logout();
 	return Redirect::to('login');
 });
 
+Event::listen('404', function() {
+	return Response::error('404');
+});
