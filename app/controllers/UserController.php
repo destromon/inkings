@@ -12,7 +12,7 @@ class UserController extends BaseController {
 	{
 		//get all users in the database
 		
-		$users = User::where('id', '!=',  Auth::user()->id)->get();
+		$users = User::where('id', '!=',  Auth::user()->id)->paginate(15);
 
 		//create a view for index page
 		return View::make('user.index')

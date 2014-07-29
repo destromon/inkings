@@ -9,7 +9,7 @@ class ArtworkController extends \BaseController {
 	 */
 	public function index()
 	{
-		$artworks = Artwork::all();
+		$artworks = Artwork::orderBy('updated_at', 'desc')->paginate(15);
 		return View::make('artwork.index')
 			->with(array('artworks' => $artworks));
 	}

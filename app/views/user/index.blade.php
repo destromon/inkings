@@ -22,6 +22,7 @@ List of Users
 
 @if(count($users) != 0)
 <table class="table table-striped table-hover table-bordered">
+<?php echo $users->links(); ?>
     <th colspan="2"> Action </th>
     <th> ID </th>
     <th> Email </th>
@@ -29,13 +30,13 @@ List of Users
     <tbody>
         @foreach($users as $user)
         <tr>
-            <td>
+            <td width="50">
             {{ Form::open(array('url' => 'user/' . $user->id, 'class' => 'pull-right')) }}
                 {{ Form::hidden('_method', 'DELETE') }}
-                {{ Form::submit('Delete ', array('class' => 'btn btn-warning')) }}
+                {{ Form::submit('Delete ', array('class' => 'btn btn-danger')) }}
             {{ Form::close() }} 
             </td>
-            <td> <a class="btn btn-small btn-info" href="{{ URL::to('user/' . $user->id . '/edit') }}">Edit</a> </td>
+            <td width="50"> <a class="btn btn-small btn-info" href="{{ URL::to('user/' . $user->id . '/edit') }}">Edit</a> </td>
             <td> {{ $user->id }}  </td>
             <td> {{ $user->user_email }} </td>
             <td> {{ $user->created_at }} </td>
@@ -48,3 +49,4 @@ List of Users
   <p> No Record Found </p>
 </div>
 @endif
+<?php echo $users->links(); ?>

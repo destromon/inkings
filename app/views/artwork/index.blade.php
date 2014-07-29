@@ -21,6 +21,7 @@ List of artworks
 <a href="/artwork/create"> Upload New Artwork </a> <br/>
 
 @if(count($artworks) != 0)
+<?php echo $artworks->links(); ?>
 <table class="table table-striped table-hover table-bordered">
     <th colspan="2"> Action </th>
     <th> ID </th>
@@ -30,15 +31,15 @@ List of artworks
     <tbody>
         @foreach($artworks as $artwork)
         <tr>
-            <td>
+            <td width="50">
             {{ Form::open(array('url' => 'artwork/' . $artwork->id, 'class' => 'pull-right')) }}
                 {{ Form::hidden('_method', 'DELETE') }}
-                {{ Form::submit('Delete ', array('class' => 'btn btn-warning')) }}
+                {{ Form::submit('Delete ', array('class' => 'btn btn-danger')) }}
             {{ Form::close() }} 
             </td>
-            <td> <a class="btn btn-small btn-info" href="{{ URL::to('artwork/' . $artwork->id . '/edit') }}">Edit</a> </td>
+            <td width="50"> <a class="btn btn-small btn-info" href="{{ URL::to('artwork/' . $artwork->id . '/edit') }}">Edit</a> </td>
             <td> {{ $artwork->id }}  </td>
-            <td> <img src="uploads/{{$artwork->artwork_image}}" class="img-responsive img-thumbnail" width="140" height="140"/> </td>
+            <td> <img src="uploads/{{$artwork->artwork_image}}" class="img-responsive img-thumbnail" width="120" height="120"/> </td>
             <td> {{ $artwork->artwork_title }} </td>
             <td> {{ $artwork->artwork_tags }} </td>
         </tr>
@@ -50,3 +51,4 @@ List of artworks
   <p> No Record Found </p>
 </div>
 @endif
+<?php echo $artworks->links(); ?>

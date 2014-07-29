@@ -9,34 +9,34 @@
 		width: 215px;
 	}
 	/* Large desktop */
-		@media (min-width: 1200px) {
+	@media (min-width: 1200px) {
+	}
+
+	/* Portrait tablet to landscape and desktop */
+	@media (min-width: 768px) and (max-width: 979px) {
+		.sidebar-content {
+			position:relative;
 		}
 
-		/* Portrait tablet to landscape and desktop */
-		@media (min-width: 768px) and (max-width: 979px) {
-			.sidebar-content {
-				position:relative;
-			}
+	}
 
+	/* Landscape phone to portrait tablet */
+	@media (max-width: 767px) {
+		.sidebar-content {
+			position:relative;
+			width: auto;
 		}
+	}
 
-		/* Landscape phone to portrait tablet */
-		@media (max-width: 767px) {
-			.sidebar-content {
-				position:relative;
-				width: auto;
-			}
+	/* Landscape phones and down */
+	@media (max-width: 480px) {
+		.sidebar-content {
+			position:relative;
 		}
-
-		/* Landscape phones and down */
-		@media (max-width: 480px) {
-			.sidebar-content {
-				position:relative;
-			}
-			.sidebar-content .logo {
-				margin-left: 50px;
-			}
+		.sidebar-content .logo {
+			margin-left: 50px;
 		}
+	}
 </style>
 
 <div class="sidebar-content">

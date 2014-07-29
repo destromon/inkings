@@ -9,6 +9,16 @@
 			margin-top: 55px;
 			padding:10px;
 		}
+		
+		table th {
+        	font-size: 14px;
+	    }
+
+	    table tbody tr td {
+	        font-size: 12px;
+	        margin: 0;
+	        padding: 0;
+	    }
 	</style>
 </head>
 <body>
