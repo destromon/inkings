@@ -80,6 +80,22 @@
 		    	event.preventDefault(); 
 		    });
 		}); 
+		$('#boxes').infinitescroll({
+		    navSelector     : ".paginate",
+		    nextSelector    : ".paginate a:last",
+		    itemSelector    : ".image-content",
+		    debug           : false,
+		    dataType        : 'html',
+		    path: function(index) {
+		    	console.log(index);
+		        return "?page=" + index;
+		    }
+		}, function(newElements, data, url){
+
+		    var $newElems = $( newElements );
+		    $('#boxes').masonry( 'appended', $newElems, true);
+
+		});
 	</script>
 </body>
 </html>
