@@ -4,20 +4,25 @@
     width: 500px;
   }
 </style>
-<div class="form-user">
+{{ HTML::ul($errors->all()) }}
 
-  <form role="form" action="/user/save" method="post">
-    <div class="form-group">
-      <label for="email">Email address</label>
-      <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
-    </div>
+{{ Form::open(array('url' => 'user')) }}
 
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-    </div>
+  <div class="form-group">
+    {{ Form::label('email', 'Email') }}
+    {{ Form::email('user_email', Input::old('email'), array('class' => 'form-control')) }}
+  </div>
 
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
+  <div class="form-group">
+    {{ Form::label('password', 'Password') }}
+    {{ Form::password('user_password', Input::old('user_password'), array('class' => 'form-control')) }}
+  </div>
 
-</div>
+  <div class="form-group">
+    {{ Form::label('access', 'Access Level') }}
+    {{ Form::select('user_access', array('admin' => 'Administrator', 'user' => 'User'), Input::old('user_accesslevel'), array('class' => 'form-control')) }}
+  </div>
+
+  {{ Form::submit('Save ', array('class' => 'btn btn-primary')) }}
+
+{{ Form::close() }}
