@@ -10,7 +10,7 @@
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
     </button>
-    <a class="navbar-brand" href="/">Dashboard</a>
+    <a class="navbar-brand" href="{{ URL::to('admin') }}">Dashboard</a>
   </div>
   <div style="" class="navbar-collapse navbar-responsive-collapse collapse in">
     <ul class="nav navbar-nav">
@@ -31,7 +31,13 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="{{ URL::to('logout') }}">Logout</a></li>
+      <li class="dropdown">
+        <a href="artwork " class="dropdown-toggle" data-toggle="dropdown">Hi  {{ Auth::user()->user_email }} ! <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ URL::to('user/' . Auth::user()->id . '/edit') }}"> Edit Profile </a> </li>          
+          <li><a href="{{ URL::to('logout') }}">Logout</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 </div>

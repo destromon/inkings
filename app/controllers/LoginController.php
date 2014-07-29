@@ -10,7 +10,7 @@ class LoginController extends \BaseController {
 	public function index()
 	{
 		if(Auth::check()) {
-			return Redirect::to('user');
+			return Redirect::to('back.admin');
 		}
 
 		return View::make('login.index');
@@ -28,7 +28,7 @@ class LoginController extends \BaseController {
 		//validate inputted data 
 		$rules = array(
 			'user_email'    => 'required|email',
-			'user_password' => 'required|alphaNum'
+			'user_password' => 'required'
 		);
 
 		$validator = Validator::make(Input::all(), $rules);
@@ -47,7 +47,8 @@ class LoginController extends \BaseController {
 			);
 
 			if (Auth::attempt($userData)) {
-				return Redirect::to('user');
+				return Redirect::to('admin')
+					->with('message', 'You are now logged in.');
 			} else {	 	
 				Session::flash('message', 'Invalid Credentials');
 				return Redirect::to('login')

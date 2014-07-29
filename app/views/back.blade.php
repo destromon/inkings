@@ -1,4 +1,3 @@
-@include('login/session');
 <!DOCTYPE html>
 <html>
 <head>

@@ -11,9 +11,8 @@
 |
 */
 
-//user controller
+//index controller
 Route::get('/', 'HomeController@index');
-Route::resource('user', 'UserController');
 
 //login controller
 Route::get('login', 'LoginController@index');
@@ -22,9 +21,24 @@ Route::post('login', 'LoginController@doLogin');
 //logout
 Route::get('logout', function() {
 	Auth::logout();
-	return Redirect::to('login');
+	return Redirect::to('login')
+		->with('logout', 'You are now logged out.');
 });
 
-Event::listen('404', function() {
-	return Response::error('404');
+//group controller
+Route::group(array('before' => 'auth'), function()
+{	
+	Route::resource('user', 'UserController');
+    Route::get('admin', 'AdminController@index');
 });
+
+
+
+Route::filter('csrf', function() {
+
+});
+
+//check if visitors only
+Route::filter('auth', function() {
+	if(Auth::guest()) Redirect::to('login');
+});	

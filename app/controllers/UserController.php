@@ -10,13 +10,9 @@ class UserController extends BaseController {
 	 */
 	public function index()
 	{
-		if(!Auth::check()) {
-			Session::flash('message', 'Please log in to access this page.');
-			return Redirect::to('login');
-		}
-
 		//get all users in the database
-		$users = User::all();
+		
+		$users = User::where('id', '!=',  Auth::user()->id)->get();
 
 		//create a view for index page
 		return View::make('user.index')

@@ -1,5 +1,9 @@
+<head>
+<title>Inkings - Login Page</title>
 @include('global/css')
+</head>
 
+<body>
 <div class="container-fluid">
 	<div id="page-login" class="row">
 		<div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
@@ -31,8 +35,12 @@
 					@if (Session::has('message'))
 					  <div class="alert bg-danger">{{ Session::get('message') }}</div>
 					@endif
+					@if (Session::has('logout'))
+					  <div class="alert bg-success">{{ Session::get('logout') }}</div>
+					@endif
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+</body>

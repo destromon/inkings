@@ -3,10 +3,20 @@
 List of Users
 </p>
 @if (Session::has('message'))
-  <div class="alert bg-success">{{ Session::get('message') }}</div>
+  <div class="bs-example">
+      <div class="alert bg-success">
+          <a href="#" class="close" data-dismiss="alert">&times;</a>
+          {{ Session::get('message') }}
+      </div>
+  </div>
 @endif
 @if (Session::has('delete'))
-  <div class="alert bg-danger">{{ Session::get('delete') }}</div>
+  <div class="bs-example">
+      <div class="alert bg-danger">
+          <a href="#" class="close" data-dismiss="alert">&times;</a>
+          {{ Session::get('message') }}
+      </div>
+  </div>
 @endif
 
 <a href="/user/create"> Create New User </a> <br/>
