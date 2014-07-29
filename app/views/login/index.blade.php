@@ -1,3 +1,4 @@
+@extends('page/header')
 <head>
 <title>Inkings - Login Page</title>
 @include('global/css')

@@ -6,16 +6,20 @@
 </style>
 Update User
 <div class="form-user">
-{{ HTML::ul($errors->all()) }}
-
   {{ Form::model($user, array('route' => array('user.update', $user->id), 'method' => 'PUT')) }}
     <div class="form-group">
       {{ Form::label('email', 'Email') }}
+      @if ($errors->has('user_email'))
+      <span class="bg-danger"> {{ $errors->first('user_email') }} </span>
+      @endif
       {{ Form::email('user_email', null, array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
       {{ Form::label('user_password', 'Password') }}
+      @if ($errors->has('user_password'))
+      <span class="bg-danger"> {{ $errors->first('user_password') }} </span>
+      @endif
       {{ Form::password('user_password', array('class' => 'form-control')) }}
     </div>
     <div class="form-group">
@@ -25,21 +29,33 @@ Update User
 
     <div class="form-group">
       {{ Form::label('user_first', 'First Name') }}
+      @if ($errors->has('user_first'))
+      <span class="bg-danger"> {{ $errors->first('user_first') }} </span>
+      @endif
       {{ Form::text('user_first', null, array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
       {{ Form::label('user_last', 'Last Name') }}
+      @if ($errors->has('user_last'))
+      <span class="bg-danger"> {{ $errors->first('user_last') }} </span>
+      @endif
       {{ Form::text('user_last', null, array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
       {{ Form::label('user_middle', 'Middle Name') }}
+      @if ($errors->has('user_middle'))
+      <span class="bg-danger"> {{ $errors->first('user_middle') }} </span>
+      @endif
       {{ Form::text('user_middle', null, array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
-      {{ Form::label('access', 'Access Level') }}
+      {{ Form::label('user_access', 'Access Level') }}
+      @if ($errors->has('user_access'))
+      <span class="bg-danger"> {{ $errors->first('user_access') }} </span>
+      @endif
       {{ Form::select('user_access', array('admin' => 'Administrator', 'user' => 'User'), Input::old('user_accesslevel'), array('class' => 'form-control')) }}
     </div>
 
