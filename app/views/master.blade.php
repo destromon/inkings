@@ -72,11 +72,13 @@
 	@include('global/js')
 	<script type="text/javascript">
 		$(document).ready(function() {
-		    $('img').bind("contextmenu",function(){
+		    $('img').bind("contextmenu",function() {
 		       return false;
 		    }); 
 
-		    $('img').on('dragstart', function(event) { event.preventDefault(); });
+		    $('img').on('dragstart', function(event) {
+		    	event.preventDefault(); 
+		    });
 		}); 
 	</script>
 </body>
