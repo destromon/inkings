@@ -10,6 +10,15 @@
 	}
 	/* Large desktop */
 	@media (min-width: 1200px) {
+		
+	}
+
+	/* Medium devices (desktops, 992px and up) */
+	@media (min-width: @screen-md-min) {
+		.sidebar-content {
+			position:fixed;
+			width: auto;
+		}
 	}
 
 	/* Portrait tablet to landscape and desktop */
