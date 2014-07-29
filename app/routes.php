@@ -11,21 +11,15 @@
 |
 */
 
+//user controller
 Route::resource('user', 'UserController');
 
-// Route::get('/', 'HomeController@index');
+//login controller
+Route::get('login', 'LoginController@index');
+Route::post('login', 'LoginController@doLogin');
 
-// //route to user.php
-// Route::get('/user', 'UserController@index');
-// //save
-// Route::post('/user', 'UserController@store');
-// //delete
-// Route::delete('/user/{id}', 'UserController@destroy');
-
-// //form
-// Route::get('/user/create', 'UserController@create');
-// //form edit
-// Route::get('/user/{id}/edit', 'UserController@edit');
-// //update
-// Route::put('/user/{id}', 'UserController@update');
+Route::get('logout', function() {
+	Auth::logout();
+	return Redirect::to('login');
+});
 
