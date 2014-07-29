@@ -39,7 +39,7 @@ List of artworks
             </td>
             <td width="50"> <a class="btn btn-small btn-info" href="{{ URL::to('artwork/' . $artwork->id . '/edit') }}">Edit</a> </td>
             <td> {{ $artwork->id }}  </td>
-            <td> <img src="uploads/{{$artwork->artwork_image}}" class="img-responsive img-thumbnail" width="120" height="120"/> </td>
+            <td> <img src="{{$artwork->artwork_image}}" class="img-responsive img-thumbnail" width="120" height="120"/> </td>
             <td> {{ $artwork->artwork_title }} </td>
             <td> {{ $artwork->artwork_tags }} </td>
         </tr>

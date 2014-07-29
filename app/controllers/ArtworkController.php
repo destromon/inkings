@@ -48,27 +48,29 @@ class ArtworkController extends \BaseController {
 			return Redirect::to('artwork/create')
 				->withErrors($validator);
 		} else {
-			$file = Input::file('artwork_image');
-			$destinationPath = 'uploads';
-			// If the uploads fail due to file system, you can try doing public_path().'/uploads' 
-			$filename = time() . '.' . $file->getClientOriginalExtension();
-			$upload_success = Input::file('artwork_image')->move($destinationPath, $filename);
-			
-			if($upload_success) {
-				$artwork = new artwork;
-				$artwork->artwork_title = Input::get('artwork_title');
-				$artwork->artwork_tags  = Input::get('artwork_tags');
-				$artwork->artwork_image = $filename;
-				$artwork->save();
+			// $file = Input::file('artwork_image');
+			// $destinationPath = 'uploads';
+			// // If the uploads fail due to file system, you can try doing public_path().'/uploads' 
+			// $filename = time() . '.' . $file->getClientOriginalExtension();
+			// $upload_success = Input::file('artwork_image')				  
+			// 	  ->move($destinationPath, $filename);
 
-				Session::flash('message', 'artwork successfully created');
+			//encode to base64
+			$file = Input::file('artwork_image');
+			$path= $file->getRealPath();
+			$type = pathinfo($path, PATHINFO_EXTENSION);
+			$data = file_get_contents($path);
+			$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+		
+			$artwork = new artwork;
+			$artwork->artwork_title  = Input::get('artwork_title');
+			$artwork->artwork_tags   = Input::get('artwork_tags');
+			$artwork->artwork_image = $base64;
+			$artwork->save();
+
+			Session::flash('message', 'artwork successfully created');
 
 				return Redirect::to('artwork');
-			} else {
-				return Redirect::to('artwork/create')
-				->withErrors($validator);
-			}
-			
 		}
 	}
 
@@ -111,8 +113,8 @@ class ArtworkController extends \BaseController {
 		//create rules 
 		$rules = array(
 			'artwork_title' => 'required',
-			'artwork_tags' 	=> 'required'
-			//'artwork_image' => 'required',
+			'artwork_tags' 	=> 'required',
+			'artwork_image' => 'required'
 		);
 
 		//validate posted data
@@ -123,9 +125,17 @@ class ArtworkController extends \BaseController {
 			return Redirect::to('artwork/' . $id . '/edit')
 				->withErrors($validator);
 		} else {
+			//encode to base64
+			$file = Input::file('artwork_image');
+			$path = $file->getRealPath();
+			$type = pathinfo($path, PATHINFO_EXTENSION);
+			$data = file_get_contents($path);
+			$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+
 			$artwork = artwork::find($id);
-			$artwork->artwork_title = Input::get('artwork_title');
-			$artwork->artwork_tags  = Input::get('artwork_tags');
+			$artwork->artwork_title  = Input::get('artwork_title');
+			$artwork->artwork_tags   = Input::get('artwork_tags');
+			$artwork->artwork_image = $base64;
 			$artwork->save();
 
 			Session::flash('message', 'artwork successfully updated');

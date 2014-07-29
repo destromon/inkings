@@ -6,7 +6,7 @@
 </style>
 Update Artwork
 <div class="form-artwork">
-  {{ Form::model($artwork, array('route' => array('artwork.update', $artwork->id), 'method' => 'PUT')) }}
+  {{ Form::model($artwork, array('files' => 'true', 'route' => array('artwork.update', $artwork->id), 'method' => 'PUT')) }}
     <div class="form-group">
       {{ Form::label('artwork_title', 'Title') }}
       @if ($errors->has('artwork_title'))
@@ -28,7 +28,7 @@ Update Artwork
         @if ($errors->has('artwork_image'))
         <span class="bg-danger"> {{ $errors->first('artwork_image') }} </span>
         @endif
-        {{ Form::file('artwork_image', Input::old('artwork_image'), array('class' => 'form-control')) }}
+        {{ Form::file('artwork_image', null, array('class' => 'form-control')) }}
     </div>
     
     {{ Form::submit('Update ', array('class' => 'btn btn-primary')) }}

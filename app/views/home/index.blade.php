@@ -34,7 +34,7 @@
 @section('content')
 	<div class="container">
 	@foreach($artworks as $artwork)
-    	<img src="uploads/{{$artwork->artwork_image}}" width="400"  height="400"
+    	<img src="{{$artwork->artwork_image}}" width="350"  height="350"
     	class="img-responsive img-thumbnail"/>
     	<h3> {{$artwork->artwork_title }} </h3>
     	<h4> <strong> Tags: </strong> {{$artwork->artwork_tags }} </h4>
