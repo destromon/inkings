@@ -25,8 +25,8 @@ List of Users
 <?php echo $users->links(); ?>
     <th colspan="2"> Action </th>
     <th> ID </th>
-    <th> Email </th>
-    <th> Created at </th>  
+    <th> Name </th>
+    <th> Email </th>  
     <tbody>
         @foreach($users as $user)
         <tr>
@@ -38,8 +38,12 @@ List of Users
             </td>
             <td width="50"> <a class="btn btn-small btn-info" href="{{ URL::to('user/' . $user->id . '/edit') }}">Edit</a> </td>
             <td> {{ $user->id }}  </td>
+            <td>
+                {{ $user->user_last }}
+                {{ $user->user_first }}
+                {{ $user->user_middle }}
+            </td>
             <td> {{ $user->user_email }} </td>
-            <td> {{ $user->created_at }} </td>
         </tr>
         @endforeach
     </tbody>
