@@ -25,6 +25,9 @@ Route::get('logout', function() {
 		->with('logout', 'You are now logged out.');
 });
 
+//search
+Route::resource('tagged', 'SearchController');
+
 //group controller
 Route::group(array('before' => 'auth'), function()
 {	
@@ -35,6 +38,7 @@ Route::group(array('before' => 'auth'), function()
 
 
 
+//anti cross scripting
 Route::filter('csrf', function() {
 
 });

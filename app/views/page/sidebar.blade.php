@@ -3,7 +3,7 @@
 		margin-left: 35px;
 	}
 	.sidebar-content {
-		background-color: #B1B1B1;
+		background: #B1B1B1 repeat-y;
 		padding: 10px;
 		position:fixed;
 		width: 215px;
@@ -50,7 +50,7 @@
 
 <div class="sidebar-content">
 	<!-- START: logo -->
-		<img src="images/logo.png" class="img-responsive logo"/>
+		<a href="{{URL::to('/')}}"> {{ HTML::image('images/logo.png', 'a logo',  array('class' => 'logo') )}} </a>
 	<!-- END: logo -->
 	<hr/>
 	<h4>
@@ -58,9 +58,9 @@
 	</h4>
 	</p>
 	<p>
-	University of the Philippines Diliman
-	B. Fine Arts, Visual Communication 2010
-	Tarlac Local Designers Program 2011
+	University of the Philippines Diliman 
+	B. Fine Arts, Visual Communication 2010 <br/>
+	Tarlac Local Designers Program 2011 <br/>
 	</p>
 	<hr/>
 

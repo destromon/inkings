@@ -31,6 +31,7 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ URL::to('/') }}"> Back to Site </a></li>
       <li class="dropdown">
         <a href="artwork " class="dropdown-toggle" data-toggle="dropdown">Hi  {{ Auth::user()->user_email }} ! <b class="caret"></b></a>
         <ul class="dropdown-menu">

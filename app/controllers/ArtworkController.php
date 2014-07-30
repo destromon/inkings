@@ -113,8 +113,7 @@ class ArtworkController extends \BaseController {
 		//create rules 
 		$rules = array(
 			'artwork_title' => 'required',
-			'artwork_tags' 	=> 'required',
-			'artwork_image' => 'required'
+			'artwork_tags' 	=> 'required'
 		);
 
 		//validate posted data
@@ -125,18 +124,22 @@ class ArtworkController extends \BaseController {
 			return Redirect::to('artwork/' . $id . '/edit')
 				->withErrors($validator);
 		} else {
-			//encode to base64
-			$file = Input::file('artwork_image');
-			$path = $file->getRealPath();
-			$type = pathinfo($path, PATHINFO_EXTENSION);
-			$data = file_get_contents($path);
-			$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-
 			$artwork = artwork::find($id);
 			$artwork->artwork_title  = Input::get('artwork_title');
 			$artwork->artwork_tags   = Input::get('artwork_tags');
-			$artwork->artwork_image = $base64;
+		
+			//encode to base64
+			$file = Input::file('artwork_image');
+			if($file) {
+				$path = $file->getRealPath();
+				$type = pathinfo($path, PATHINFO_EXTENSION);
+				$data = file_get_contents($path);
+				$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+				$artwork->artwork_image = $base64;
+			}
+			
 			$artwork->save();
+			
 
 			Session::flash('message', 'artwork successfully updated');
 

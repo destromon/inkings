@@ -5,25 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	@include('global/css')
 	<style>
-		body {
-			background-color: #222222; margin-top:30px;
-		}
-		.container-fluid {
-			width: 1366px;
-		}
-		.content {
-			background-color: #DEDEDE;
-		}
-		.header {
-			padding: 10px;
-		}
-		.sidebar {
-			position: relative;
-			background-color: #B1B1B1;
-		}
-		.logo {
-			margin-left: 20px;
-		}
+		body { background-color: #222222; margin-top:30px; }
+		.container-fluid { width: 1366px; }
+		.content { background-color: #DEDEDE; }
+		.header { padding: 10px; }
+		.sidebar { background-color: #B1B1B1; position: relative;  }
+		.logo { margin-left: 20px; }
 
 		/* Large desktop */
 		@media (min-width: 1200px) {
@@ -37,16 +24,12 @@
 
 		/* Landscape phone to portrait tablet */
 		@media (max-width: 767px) {
-			.container-fluid {
-				width: auto;
-			}
+			.container-fluid { width: auto; }
 		}
 
 		/* Landscape phones and down */
 		@media (max-width: 480px) {
-			.container-fluid {
-				width: auto;
-			}
+			.container-fluid { width: auto; }
 		}
 	</style>
 </head>
@@ -81,6 +64,7 @@
 		    	event.preventDefault(); 
 		    });
 		}); 
+
 		$('#boxes').infinitescroll({
 		    navSelector     : ".paginate",
 		    nextSelector    : ".paginate a:last",
