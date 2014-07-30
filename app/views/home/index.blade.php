@@ -54,7 +54,7 @@
 	@foreach($artworks as $artwork)
 		<div class="image-content">
 	    	<img src="{{$artwork->artwork_image}}" width="350"  height="350"
-	    	class="img-responsive img-thumbnail img-rounded image-loaded"/>
+	    	class="img-responsive img-thumbnail img-rounded image-loaded"/> 
 	    	<h3> {{$artwork->artwork_title }} </h3>
 	    	<h4>
 	    		<strong> Tags: </strong>  
@@ -66,10 +66,10 @@
     	</div>
     @endforeach
 	</div>
+	
 	<div class="col-span-12">
-    
-    <div class="paginate text-center" style="visibility:hidden;">
-        {{$artworks->links()}}
-    </div>
-</div>
+	    <div class="paginate text-center" style="visibility:hidden;">
+	        {{$artworks->links()}}
+	    </div>
+	</div>
 @stop
