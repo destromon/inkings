@@ -12,7 +12,7 @@ class LoginController extends \BaseController {
 		if(Auth::check()) {
 			return Redirect::to('back.admin');
 		}
-
+		
 		return View::make('login.index');
 	}
 
@@ -45,7 +45,7 @@ class LoginController extends \BaseController {
 				'user_email' 	=> Input::get('user_email'),
 				'user_password' => Input::get('user_password')
 			);
-
+			
 			if (Auth::attempt($userData)) {
 				return Redirect::to('admin')
 					->with('message', 'You are now logged in.');

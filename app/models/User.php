@@ -8,7 +8,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 class User extends Eloquent implements UserInterface, RemindableInterface {
 	use UserTrait, RemindableTrait;
 	protected $table = 'user';
-	
+
 	public function getAuthPassword()
 	{
 	     return $this->attributes['user_password'];
