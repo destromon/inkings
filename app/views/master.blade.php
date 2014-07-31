@@ -63,7 +63,19 @@
 		    $('img').on('dragstart', function(event) {
 		    	event.preventDefault(); 
 		    });
+
+		    $(".fancybox").fancybox();
+		    
 		}); 
+		$(document).scroll(function(event) {
+			$('img').bind("contextmenu",function() {
+		       return false;
+		    }); 
+
+		    $('img').on('dragstart', function(event) {
+		    	event.preventDefault(); 
+		    });
+		});
 
 		$('#boxes').infinitescroll({
 		    navSelector     : ".paginate",
@@ -79,7 +91,6 @@
 
 		    var $newElems = $( newElements );
 		    $('#boxes').masonry( 'appended', $newElems, true);
-
 		});
 	</script>
 </body>

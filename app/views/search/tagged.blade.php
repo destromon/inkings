@@ -55,16 +55,18 @@
 	<div class="container boxes" id="boxes">
 	@foreach($artworks as $artwork)
 		<div class="image-content">
-    	<img src="{{$artwork->artwork_image}}" width="350"  height="350"
-    	class="img-responsive img-thumbnail img-rounded image-loaded"/>
-    	<h3> {{$artwork->artwork_title }} </h3>
-    	<h4>
-    		<strong> Tags: </strong>  
-    		<?php $tags = explode(',' ,$artwork->artwork_tags) ?>
-    		@foreach($tags as $tag)
-    			<a href="{{ URL::to('tagged/' . $tag )}}" > #{{ $tag }} </a>
-    		@endforeach
-    	</h4>
+			<a class="fancybox" rel="group" title="{{$artwork->artwork_title}}" href="{{$artwork->artwork_image}}">
+		    	<img src="{{$artwork->artwork_image}}" width="350"  height="350"
+		    	class="img-responsive img-thumbnail img-rounded image-loaded"/>
+	    	</a>
+	    	<h3> {{$artwork->artwork_title }} </h3>
+	    	<h4>
+	    		<strong> Tags: </strong>  
+	    		<?php $tags = explode(',' ,$artwork->artwork_tags) ?>
+	    		@foreach($tags as $tag)
+	    			<a href="{{ URL::to('tagged/' . $tag )}}" > #{{ $tag }} </a>
+	    		@endforeach
+	    	</h4>
     	</div>
     @endforeach
 	</div>

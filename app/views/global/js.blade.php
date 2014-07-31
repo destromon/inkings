@@ -6,3 +6,7 @@
 {{ HTML::script('plugins/tinymce/tinymce.min.js') }}
 {{ HTML::script('plugins/tinymce/jquery.tinymce.min.js') }}
 {{ HTML::script('js/jquery.tagsinput.js') }}
+{{ HTML::script('js/jquery.fancybox.pack.js') }}
+{{ HTML::script('js/jquery.fancybox-media.js') }}
+{{ HTML::script('js/jquery.fancybox-buttons.js') }}
+{{ HTML::script('js/jquery.fancybox-thumbs.js') }}
