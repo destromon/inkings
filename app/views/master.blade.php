@@ -5,11 +5,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	@include('global/css')
 	<style>
-		body { background-color: #222222; margin-top:30px; }
+		body {
+			padding-top: 30px;
+		}
+		div .wrapper .content {
+			background: url('/images/sitebg.jpg') no-repeat fixed top;
+
+		}
+
 		.container-fluid { width: 1366px; }
 		.content { background-color: #DEDEDE; }
 		.header { padding: 10px; }
-		.sidebar { background-color: #B1B1B1; position: relative;  }
+		.sidebar { position: relative;  }
 		.logo { margin-left: 20px; }
 
 		/* Large desktop */
@@ -38,12 +45,12 @@
 		<div class="row wrapper">
 			<!-- START: header -->
 			<div class="header">
-			@include('page/header')
+			@include('front/header')
 			</div>
 			<!-- END: header -->
 			<!-- START: Sidebar -->
 			<div class="sidebar col-md-2 col-sm-2">
-			 	@include('page/sidebar')
+			 	@include('front/sidebar')
 			</div>
 			<!-- End: Sidebar -->
 			<!-- START: Content -->

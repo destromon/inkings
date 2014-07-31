@@ -58,7 +58,7 @@
 	/* Portrait tablet to landscape and desktop */
 	@media (min-width: 768px) and (max-width: 979px) {
 		div .container {
-			width: 800px;
+			width: 950px;
 		}
 	}
 
