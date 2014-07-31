@@ -8,8 +8,17 @@ class UserController extends BaseController {
 	 * @param
 	 * @return
 	 */
+	function __construct()
+	{
+
+	}
 	public function index()
 	{
+		if(Auth::user()->user_access != 'admin') {
+			Session::flash('message', 'You dont have an access to this page.');
+			
+			return Redirect::to('admin');
+		}
 		//get all users in the database
 		
 		$users = User::where('id', '!=',  Auth::user()->id)->paginate(15);
