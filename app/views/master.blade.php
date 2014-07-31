@@ -56,6 +56,14 @@
 	@include('global/js')
 	<script type="text/javascript">
 		$(document).ready(function() {
+			$('a').bind("contextmenu",function() {
+		       return false;
+		    }); 
+
+		    $('a').on('dragstart', function(event) {
+		    	event.preventDefault(); 
+		    });
+
 		    $('img').bind("contextmenu",function() {
 		       return false;
 		    }); 
@@ -68,6 +76,15 @@
 		    
 		}); 
 		$(document).scroll(function(event) {
+			$('a').bind("contextmenu",function() {
+		       return false;
+		    }); 
+
+		    $('a').on('dragstart', function(event) {
+		    	event.preventDefault(); 
+		    });
+
+
 			$('img').bind("contextmenu",function() {
 		       return false;
 		    }); 
