@@ -8,6 +8,11 @@
 		position:fixed;
 		width: 215px;
 	}
+
+	.sidebar-content h4 {
+		text-shadow: 1px 1px 2px #525252;
+	}
+
 	/* Large desktop */
 	@media (min-width: 1200px) {
 		
@@ -84,6 +89,6 @@
 	</address>
 
 	<hr/>
-	Copyright &copy; 2014. All Rights Reserved.
+	<p> Copyright &copy; 2014. All Rights Reserved. </p>
 	<hr/>
 </div>

@@ -9,16 +9,46 @@
 	}
 	
 	.boxes .image-content {
-		margin-top: 5px;
+		margin-top: 5px;		
+	}
+
+	.boxes .image-content a img {
+		margin: 10px;
+		-webkit-box-shadow: 7px 7px 5px 0px rgba(50, 41, 46, 0.14);
+		-moz-box-shadow:    7px 7px 5px 0px rgba(50, 41, 46, 0.14);
+		box-shadow:         7px 7px 5px 0px rgba(50, 41, 46, 0.14);
 	}
 
 	.boxes .image-content h4 {
 		margin-bottom: 20px;
+		margin-left:5px;
 		padding: 2px;
+		text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
 	}
+
+	.boxes .image-content h4 strong {
+		letter-spacing: 1px;
+		margin-bottom: 20px;
+		margin-left:5px;
+		padding: 2px;
+		text-shadow: 1px 1px 1px #B1B1B1;
+	}
+
+	.boxes .image-content h4 a {		
+		font-size: 16px;
+		letter-spacing: 1.5px;
+		margin-bottom: 20px;
+		padding: 2px;	
+		text-shadow: 1px 1px 1px #222222;	
+		padding-left: 5px;
+	}
+
 	.boxes .image-content h3 {
+		letter-spacing: 1.2px;
+		margin-left: 10px;
 		margin-top: 2px;
 		padding: 2px;
+		text-shadow: 1px 1px 1px #222222;
 	}
 
 	/* Large desktop */
@@ -53,7 +83,7 @@
 	<div class="container boxes" id="boxes">
 	@foreach($artworks as $artwork)
 		<div class="image-content">
-			<a class="fancybox" rel="group" title="{{$artwork->artwork_title }}" href="{{$artwork->artwork_image}}">
+			<a class="fancybox" rel="group" title="{{$artwork->artwork_title}}" href="{{$artwork->artwork_image}}">
 		    	<img src="{{$artwork->artwork_image}}" width="350"  height="350"
 		    	class="img-responsive img-thumbnail img-rounded image-loaded"/> 
 	    	</a>
@@ -62,7 +92,7 @@
 	    		<strong> Tags: </strong>  	    		
 	    		<?php $tags = explode(',' ,$artwork->artwork_tags) ?>
 	    		@foreach($tags as $tag)
-	    			<a href="{{ URL::to('tagged/' . $tag )}}" > #{{ $tag }} </a>
+	    			<a href="{{ URL::to('tagged/' . $tag )}}" >#{{ $tag }}</a>
 	    		@endforeach
 	    	</h4>
     	</div>
