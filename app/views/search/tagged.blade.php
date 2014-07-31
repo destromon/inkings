@@ -81,7 +81,9 @@
 	}
 </style>
 @section('content')
-	<div class="container boxes" id="boxes">
+
+@if(count($artworks) != 0)
+	<div class="container boxes" id="boxes" @if(count($artworks) <= 1) style="height: 691px;" @endif >
 	@foreach($artworks as $artwork)
 		<div class="image-content">
 			<a class="fancybox" rel="group" title="{{$artwork->artwork_title}}" href="{{$artwork->artwork_image}}">
@@ -105,4 +107,11 @@
         {{$artworks->links()}}
     </div>
 </div>
+
+@else
+    <div class="alert alert-error" style="height: 670px;">        
+        <strong>Oops!</strong> No Record Found.
+    </div>
+@endif
+
 @stop
