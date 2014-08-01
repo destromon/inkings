@@ -2,25 +2,30 @@
 	
 	.sidebar-wrapper {
 		background: url('/images/side.jpg') repeat fixed top #BFBFBF;
-		position:fixed;
-		width: 180px;
+		height: 100%;
 		margin-left: -15px;
 		margin-top: 108px;
-		max-height: 659px;
-		min-height: 659px;
+		position:fixed;
+		width: 180px;
 	}
 
 	.sidebar-wrapper .sidebar-content {
-		bottom:50;
-		position: absolute;
-		margin-left: 10%;
+		height: 100%;
+		margin-left: 15%;
+		float: center;
+		text-align: right;
 	}
 
-	.sidebar-wrapper .sidebar-content p {
+	.sidebar-wrapper .sidebar-content .sidebar-data {
+		bottom: 150;
 		font-family: calibri;
-		font-size: 18px;
-		padding: 0;
+		font-size: 16px;
+		margin-bottom: 20px;
 		margin: 0;
+		padding-bottom: 20px;
+		padding: 0;
+		position: absolute;
+		width: auto;
 	}
 
 	/* Large desktop */
@@ -68,12 +73,13 @@
 
 <div class="sidebar-wrapper">
 	<div class="sidebar-content">
-		<p class="pull-right"> CONTACT US</p> <br/>
-		<p class="pull-right"> Inkings etc etc</p> <br/>
-		<p class="pull-right"> Email here</p> <br/>
-		<p class="pull-right"> Website here</p> <br/>
-		<p class="pull-right"> Office address here</p> <br/> <br/> <br/>
-		<p class="pull-right"> Copyright Inkings</p> <br/>
-		
+		<div class="sidebar-data">
+			 CONTACT US <br/>
+			 Inkings etc etc <br/>
+			 Email here <br/>
+			 Website here <br/>
+			 Office address here <br/>
+			 Copyright Inkings <br/>
+		</div>		
 	</div>
 </div>
