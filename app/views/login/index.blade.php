@@ -1,7 +1,13 @@
-@extends('page/header')
+@extends('front/header')
 <head>
 <title>Inkings - Login Page</title>
 @include('global/css')
+<style type="text/css">
+	body{
+		margin-top:120px;
+		background: #212121;
+	}
+</style>
 </head>
 
 <body>

@@ -6,18 +6,18 @@
 	@include('global/css')
 	<style>
 		body {
-			padding-top: 30px;
-		}
-		div .wrapper .content {
-			background: url('/images/sitebg.jpg') no-repeat fixed top;
-
+			background: #212121;
+			overflow-y: scroll;
+			overflow-x: hidden;
 		}
 
-		.container-fluid { width: 1366px; }
-		.content { background-color: #DEDEDE; }
-		.header { padding: 10px; }
-		.sidebar { position: relative;  }
-		.logo { margin-left: 20px; }
+		.container { width: 1366px; }
+
+		.content { 
+			margin-top: 108px;
+			width: 1180px;
+			margin-left: 180px;
+		}
 
 		/* Large desktop */
 		@media (min-width: 1200px) {
@@ -41,18 +41,21 @@
 	</style>
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row wrapper">
 			<!-- START: header -->
-			<div class="header">
+			<div class="header col-md-12 col-sm-12" style="float:center !important;
+			">
 			@include('front/header')
 			</div>
 			<!-- END: header -->
+
 			<!-- START: Sidebar -->
 			<div class="sidebar col-md-2 col-sm-2">
 			 	@include('front/sidebar')
 			</div>
 			<!-- End: Sidebar -->
+
 			<!-- START: Content -->
 			<div class="content col-md-10 col-sm-10">
 			@yield('content')

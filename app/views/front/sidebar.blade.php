@@ -1,19 +1,26 @@
 <style type="text/css">
-	.sidebar-content .logo {
-		margin-left: 5px;
-		width: 180px;
-		height: 180px;
-	}
-	.sidebar-content {
+	
+	.sidebar-wrapper {
 		background: url('/images/side.jpg') repeat fixed top;
-		height: 100%;
-		padding: 10px;
+		height: 658px;
 		position:fixed;
-		width: 215px;
+		width: 180px;
+		margin-left: -15px;
+		margin-top: 108px;
+
 	}
 
-	.sidebar-content h4 {
-		text-shadow: 1px 1px 2px #525252;
+	.sidebar-wrapper .sidebar-content {
+		bottom:50;
+		position: absolute;
+		margin-left: 10%;
+	}
+
+	.sidebar-wrapper .sidebar-content p {
+		font-family: calibri;
+		font-size: 18px;
+		padding: 0;
+		margin: 0;
 	}
 
 	/* Large desktop */
@@ -43,12 +50,6 @@
 			width: auto;
 			height: 100%;
 		}
-
-		.sidebar-content .logo {
-			margin-left: 35%;
-			width: 180px;
-			height: 180px;
-		}
 	}
 
 	/* Landscape phones and down */
@@ -63,38 +64,14 @@
 	}
 </style>
 
-<div class="sidebar-content">
-	<!-- START: logo -->
-		<a href="{{URL::to('/')}}"> {{ HTML::image('images/logo.png', 'a logo',  array('class' => 'logo') )}} </a>
-	<!-- END: logo -->
-	<hr/>
-	<h4>
-	MAIKO G. PASCUAL
-	</h4>
-	</p>
-	<p>
-	University of the Philippines Diliman 
-	B. Fine Arts, Visual Communication 2010 <br/>
-	Tarlac Local Designers Program 2011 <br/>
-	</p>
-
-	<address>
-	  <strong>Address:</strong><br>
-	  795 Folsom Ave, Suite 600
-	  San Francisco, CA 94107
-	  <abbr title="Phone">P:</abbr> (123) 456-7890
-	</address>
-
-	<address>
-	  <strong>Email:</strong><br>
-	  <a href="mailto:#">first.last@email.com</a>
-	</address>
-
-	<address>
-	  <strong>Facebook:</strong><br>
-	  <a href="mailto:#">first.last@facebook.com</a>
-	</address>
-
-	
-	<p> Copyright &copy; 2014. All Rights Reserved. </p>
+<div class="sidebar-wrapper">
+	<div class="sidebar-content">
+		<p class="pull-right"> CONTACT US</p> <br/>
+		<p class="pull-right"> Inkings etc etc</p> <br/>
+		<p class="pull-right"> Email here</p> <br/>
+		<p class="pull-right"> Website here</p> <br/>
+		<p class="pull-right"> Office address here</p> <br/> <br/> <br/>
+		<p class="pull-right"> Copyright Inkings</p> <br/>
+		
+	</div>
 </div>
