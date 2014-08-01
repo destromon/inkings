@@ -101,33 +101,8 @@
     @endforeach
 	</div>
 	
-	<div class="col-span-12">
-	    <div class="paginate text-center" style="visibility:hidden;">
-	        {{$artworks->links()}}
-	    </div>
-	</div><div class="container boxes" id="boxes">
-	@foreach($artworks as $artwork)
-		<div class="image-content">
-			<a class="fancybox" rel="group" title="{{$artwork->artwork_title}}" href="{{$artwork->artwork_image}}">
-		    	<img src="{{$artwork->artwork_image}}" width="330"  height="420"
-		    	class="img-responsive img-thumbnail img-rounded image-loaded"/> 
-	    	</a>
-	    	<h3> {{$artwork->artwork_title }} </h3>
-	    	<h4>
-	    		<strong> Tags: </strong>  	    		
-	    		<?php $tags = explode(',' ,$artwork->artwork_tags) ?>
-	    		@foreach($tags as $tag)
-	    			<a href="{{ URL::to('tagged/' . $tag )}}" >#{{ $tag }}</a>
-	    		@endforeach
-	    	</h4>
-    	</div>
-    @endforeach
-	</div>
-	
-	<div class="col-span-12">
-	    <div class="paginate text-center" style="visibility:hidden;">
-	        {{$artworks->links()}}
-	    </div>
-	</div>
+    <div class="paginate text-center" style="visibility:hidden;">
+        {{$artworks->links()}}
+    </div>
 @stop
 </div>

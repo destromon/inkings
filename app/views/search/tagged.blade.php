@@ -81,7 +81,7 @@
 </div>
 
 @if(count($artworks) != 0)
-	<div class="container boxes" id="boxes" @if(count($artworks) <= 1) style="height: 691px;" @endif >
+	<div class="container boxes" id="boxes">
 	@foreach($artworks as $artwork)
 		<div class="image-content">
 			<a class="fancybox" rel="group" title="{{$artwork->artwork_title}}" href="{{$artwork->artwork_image}}">

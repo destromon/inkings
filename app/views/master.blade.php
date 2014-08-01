@@ -85,6 +85,7 @@
 		    $(".fancybox").fancybox();
 		    
 		}); 
+		
 		$(document).scroll(function(event) {
 			$('a').bind("contextmenu",function() {
 		       return false;
