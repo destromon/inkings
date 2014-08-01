@@ -1,13 +1,13 @@
 <style type="text/css">
 	
 	.sidebar-wrapper {
-		background: url('/images/side.jpg') repeat fixed top;
-		height: 658px;
+		background: url('/images/side.jpg') repeat fixed top #BFBFBF;
 		position:fixed;
 		width: 180px;
 		margin-left: -15px;
 		margin-top: 108px;
-
+		max-height: 659px;
+		min-height: 659px;
 	}
 
 	.sidebar-wrapper .sidebar-content {
@@ -30,34 +30,36 @@
 
 	/* Medium devices (desktops, 992px and up) */
 	@media (min-width: @screen-md-min) {
-		.sidebar-content {
-			position:fixed;
-			width: auto;
-			height: 100%;
-		}
+
 	}
 
 	/* Portrait tablet to landscape and desktop */
 	@media (min-width: 768px) and (max-width: 979px) {
-
-
+		
 	}
 
 	/* Landscape phone to portrait tablet */
 	@media (max-width: 767px) {
-		.sidebar-content {
+		.sidebar-wrapper {
+			background: url('/images/side.jpg') repeat fixed top #BFBFBF;
 			position:relative;
 			width: auto;
-			height: 100%;
+			margin-left: 0;
+			margin-top: 69px;
+			max-height: 500px;
+			min-height: 500px;
+		}
+
+		.sidebar-wrapper .sidebar-content {
+			width: auto;
+			position: absolute;
+			margin-left: 15%;
 		}
 	}
 
 	/* Landscape phones and down */
 	@media (max-width: 480px) {
-		.sidebar-content {
-			position:relative;
-			height: 100%;
-		}
+
 		.sidebar-content .logo {
 			margin-left: 15px;
 		}

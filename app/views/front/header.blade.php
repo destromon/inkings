@@ -36,21 +36,62 @@
 
     /* Portrait tablet to landscape and desktop */
     @media (min-width: 768px) and (max-width: 979px) {
-      
+        .navbar-default {
+            background: #FFFFFF;
+            height: 110px;
+            left:0;
+            margin-left:0;
+            width: 1166px;
+            border-bottom: 1px #FFFFFF solid;
+            box-shadow: none;
+        }
+
+        .navbar-default .main-navbar {
+           bottom:-5;
+           position:absolute;
+           left:169px;
+           letter-spacing: .01px
+        }
     }
 
     /* Landscape phone to portrait tablet */
     @media (max-width: 767px) {
+      .navbar-default {
+            background: #FFFFFF;
+            left:0;
+            margin-left:0;
+            width: 600px;
+            position: relative;
+        }
+
+        .navbar-default .main-navbar {
+            left: 0;
+            position:relative;
+            letter-spacing: .01px;
+            background: #FFFFFF;
+        }
+
       .container-fluid { width: auto; }
     }
 
     /* Landscape phones and down */
     @media (max-width: 480px) {
-      .header-wrapper .navbar {
-        height: auto;
-        width: 255px;
-        margin-left: 15px;
+      .navbar-default {
+          background: #FFFFFF;
+          left:0;
+          margin-left:0px;
+          width: auto;
+          position: relative
       }
+
+      .navbar-default .main-navbar {
+          left: 0;
+          position:relative;
+          letter-spacing: .01px;
+          background: #FFFFFF;
+      }
+
+
       .logo {
         float:center;
         height: auto;
