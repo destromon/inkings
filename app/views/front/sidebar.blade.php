@@ -48,17 +48,30 @@
 		.sidebar-wrapper {
 			background: url('/images/side.jpg') repeat fixed top #BFBFBF;
 			position:relative;
-			width: auto;
+			padding: 20px;
 			margin-left: 0;
-			margin-top: 69px;
-			max-height: 500px;
-			min-height: 500px;
+			margin-top: 0;
+			width: auto;
+			height: 70%;
 		}
 
 		.sidebar-wrapper .sidebar-content {
-			width: auto;
-			position: absolute;
+			height: 70%;
 			margin-left: 15%;
+			float: center;
+			text-align: right;
+		}
+
+		.sidebar-wrapper .sidebar-content .sidebar-data {
+			bottom: 150;
+			font-family: calibri;
+			font-size: 16px;
+			margin-bottom: 20px;
+			margin: 0;
+			padding-bottom: 20px;
+			padding: 0;
+			position: absolute;
+			width: auto;
 		}
 	}
 

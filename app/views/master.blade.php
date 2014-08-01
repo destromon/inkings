@@ -31,6 +31,12 @@
 
 		/* Landscape phone to portrait tablet */
 		@media (max-width: 767px) {
+			.content { 
+				margin-top: 0;
+				width: auto;
+				margin-left: 0px;
+			}
+
 			.container-fluid { width: auto; }
 		}
 

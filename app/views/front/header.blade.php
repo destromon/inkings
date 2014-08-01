@@ -60,7 +60,7 @@
             background: #FFFFFF;
             left:0;
             margin-left:0;
-            width: 600px;
+            width: auto;
             position: relative;
         }
 

@@ -62,7 +62,14 @@
 
 	/* Landscape phone to portrait tablet */
 	@media (max-width: 767px) {
+		.index-content {
+			background: none;		
+		}
 
+		.boxes {
+			background: #EDEDED;
+			width: auto;
+		}
 	}
 
 	/* Landscape phones and down */
