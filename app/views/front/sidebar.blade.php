@@ -91,7 +91,7 @@
 			 Inkings etc etc <br/>
 			 Email here <br/>
 			 Website here <br/>
-			 Office address here <br/>
+			 Office address here <br/><br/>
 			 Copyright Inkings <br/>
 		</div>		
 	</div>
